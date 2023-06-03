@@ -14,6 +14,7 @@ app = fastapi.FastAPI(
     description="An API for anime"
 )
 db = Database(os.getenv("MONGODB_URL"))
+db.connect()
 wit = WitClient(db)
 
 @app.get("/")
